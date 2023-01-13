@@ -146,5 +146,20 @@ public class Graph {
 	public void setEdges(List<Edge> edges) {
 		this.edges = edges;
 	}
-
+	
+	public Vertex createVertex(Coordinate coordinate, String id) {
+		Vertex vert = new Vertex();
+		vert.setId(id);
+		vert.setCoordinate(coordinate);
+		this.getVertices().add(vert);
+		return vert;
+	}
+	
+	public Edge createEdge(Vertex source, Vertex target, String id) {
+		Edge ab = new Edge(source,target);
+		ab.setId(id);
+		this.getEdges().add(ab);
+		return ab;
+	}
+	
 }
